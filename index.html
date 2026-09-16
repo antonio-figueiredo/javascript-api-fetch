@@ -1,0 +1,39 @@
+<html> 
+    <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="index.css">
+      <title>
+        Treino de Javascript - Consumir uma API de usuários 
+    </title>
+  </head>
+    <body>
+        <h3 style="text-align: center;">Página de estudo de Javascript.</h3>
+        <section class="first-button">
+        <p>Essa é uma página criada para estudar Javascript. Ela consome uma API e mostra os resultados obtidos. <br><br> Caso queira ver a lista retornada por essa API, clique no botão abaixo:</p>
+        <button class="my-button" onclick="listarUsuarios()">Trazer resultados</button>
+        </section>
+        <section class="second-button">
+        <p>
+        Se caso deseja buscar algum usuário específico na lista entre com o ID e clique no botão: 
+        </p>
+        <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, ''); if(this.value !== '' && parseInt(this.value) > 50) this.value = 50;" id="usuarioDesejado" placeholder="Digite aqui"" class="my-input">
+         <button class="my-button" onClick="buscarUsuarios(document.getElementById('usuarioDesejado').value)">Buscar</button>
+         </section>
+         <section class="third-button">
+         <p>Por fim, você também pode buscar por empresa, coloque alguma parte do nome da empresa e busque: </p>
+         <input
+            type="text"
+            oninput="this.value = this.value.replace(/[^\p{L}\s-]/gu, '');"
+            id="usuarioDesejadoPorEmpresa"
+            placeholder="Digite aqui"
+            class="my-input"
+        >
+         <button class="my-button" onClick="buscarUsuarioPorEmpresa(document.getElementById('usuarioDesejadoPorEmpresa').value)">Buscar Por Empresa</button>
+        </section>
+         <section class="results">
+        <p>Resultado:</p>
+        <pre><div id="resposta"></div></pre>
+        </section>
+        <script src="index.js" defer></script>
+      </body>
+</html>
